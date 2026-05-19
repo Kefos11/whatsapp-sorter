@@ -195,7 +195,7 @@ async function runAll(){
     try{
       const b64=await cropHeader(results[i].file);
       const mt=results[i].file.type||'image/jpeg';
-      const res=await fetch('/api/read-date',{
+      const res=await fetch('/.netlify/functions/read-date',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({image:b64, mediaType:mt})
